@@ -1,9 +1,95 @@
 <!DOCTYPE html5>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>About!</title>
+    <title>Product <%=request.product.name%></title>
+
+    <!-- General META -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+   
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <style>
+     h2{
+        position:fixed;
+       
+        z-index: 10000000;
+        top:-10px;
+        left: 0px;
+        
+      }
+
+img{
+  
+  top:150px;
+  left:900px;
+  border: 1px solid #ccc;
+}
+table, td, th {    
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table {
+  position:absolute;
+    top:358px;
+    left:908px;
+    border:1px solid #ccc;
+    width: 299px;
+}
+
+th, td {
+    padding: 15px;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
   </head>
   <body>
-    <h2>About!</h2>
+    
+  
+    
+
+    
+  
+  
+  <table>  
+    
+    <tr><img src=<%=request.product.photo%> width="298" height="200" ></tr>
+  
+    <tr>
+    <th>Product name:</th>
+    <th><%=request.product.name%></th>
+    </tr>
+    <tr>
+    <td>Description:</td>
+    <td><%=request.product.description%></td>
+    </tr>
+    <tr>
+      <td>Price: </td>
+      <td><%=request.product.price%> BDT</td>
+    </tr>
+    <tr>
+      <td>Quantity:</td>
+    <td><%=request.product.quantity%> BDT</td>
+    </tr>
+  </table>  
+  
+
+
+    
+ 
+
   </body>
+  <script src="/lib/jquery/dist/jquery.min.js"></script>
+  <script src="/vendor/ejs_production.js"></script>
+  <script>
+
+  </script>
 </html>

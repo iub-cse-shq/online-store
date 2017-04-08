@@ -1,0 +1,121 @@
+<!DOCTYPE html5>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>online Store</title>
+    <!-- General META -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+   
+ 
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <style>
+  
+  div.gallery {
+    position:relative;
+     top:200px;
+     left:150;
+    margin: 5px;
+    border: 1px solid #ccc;
+    width: 250px;
+    height:200px;
+    display:inline-block;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+div.gallery img {
+    left:50px;
+    width: 60%;
+    height:150px;
+}
+div.desc {
+    padding: 15px;
+    text-align: center;
+    display:inline;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    
+}
+#p{
+  position:relative;
+  top:500px;
+  width:100%;
+}
+#ht{
+  text-align:center;
+  color:white;
+}
+#j{
+  position:relative;
+  top:-10px;
+  left:400px;
+  right:-10px;
+  
+
+}
+
+
+
+</style>
+  </head>
+  <body>
+    
+    <div class="contain">
+  <div class="header" id="hd">
+     <a  id="i" href="https://online-store-mustafizz.c9users.io"><img src="/imgs/t.png"/></a>
+
+    <a class="id"href="https://online-store-mustafizz.c9users.io/products/viewer/apple">APPLE</a>
+    <a class="id"href="https://online-store-mustafizz.c9users.io/products/viewer/samsung">SAMSUNG</a>
+    <a class="id"href="https://online-store-mustafizz.c9users.io/products/viewer/htc">HTC</a>
+    <a class="id"href="https://online-store-mustafizz.c9users.io/products/viewer/huawei">HUAWEI</a>
+    <a class="id"href="">Support!</a>
+<a  id="j" href="https://online-store-mustafizz.c9users.io"><img src="/imgs/q.png"/></a>
+    
+  </div>
+</div>
+  
+
+    <% for(var i=0; i<products.length; i++) { %>
+    
+     <div class="gallery">
+    
+    <img src=<%=products[i].photo%> width="500" height="300" >
+  
+  <div class="desc">
+     <h5> <%=products[i].name%></h5>
+      <h6>Price: <%=products[i].price%> BDT</h6>
+      <a href=<%= "/products/" +products[i]._id%>><button class="button">buy</button></a>
+      
+</div>
+  
+
+    </div>
+
+    <%}%>
+    <div id="p"><img src="/imgs/w.png"</div>
+    <div class="footer" id="ft">
+<h6 id="ht" >&#169 2017 Mustafiz Rahman all right reserved</h6>
+</div>
+    
+  </body>
+  <script src="/lib/jquery/dist/jquery.min.js"></script>
+  <script src="/vendor/ejs_production.js"></script>
+  <script>
+  </script>
+</html>

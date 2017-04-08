@@ -1,32 +1,26 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var ProductSchema = {
+var OrderSchema = {
 
-  name: {
+  cname: {
     type: String,
     default: '',
     trim: true,
     required: 'Name required'
   },
-    brand: {
-    type: String,
+  cphone: {
+    type: Number,
     default: '',
     trim: true,
-    required: 'Name required'
-  },
-    photo: {
-    type: String,
-    default: '',
-    trim: true,
-    required: 'Name required'
+    required: 'Phone number required'
   },
 
 
-  description: {
+  pname: {
     type: String,
     default: '',
     trim: true,
-    required: 'Description required'
+    required: 'Product name required'
   },
 
   price: {
@@ -36,6 +30,11 @@ var ProductSchema = {
   },
 
   quantity: {
+    type: Number,
+    default: '',
+    required: 'Quantity required'
+  },
+   cnumber: {
     type: Number,
     default: '',
     required: 'Quantity required'
@@ -52,5 +51,5 @@ var ProductSchema = {
   }
 }
 
-var Product = mongoose.model('Product', ProductSchema, 'products');
-module.exports = Product;
+var Order = mongoose.model('Order', OrderSchema, 'orders');
+module.exports = Order;

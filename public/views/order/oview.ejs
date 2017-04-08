@@ -1,7 +1,9 @@
+
 <!DOCTYPE html5>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>All Products</title>
+    <title>Product </title>
+
     <!-- General META -->
     <meta charset="utf-8">
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
@@ -12,12 +14,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
-    <div class="container">
-      <h2>All Products</h2>
-    <% for(var i=0; i<products.length; i++) { %>
-      <div><%= products[i].name %></div>
-      <%}%>
-    </div>
+
+  <div class="container">
+      
+    <h2>Product name: <%=request.order.pname%></h2>
+    <h3>Price: BDT <%=request.order.price%></h3>
+    <h4>Coustomer Name: <%=request.order.cname%> </h4>
+    <h4>Phone Number: <%=request.order.cphone%> </h4>
+    <h4>Card Number: <%=request.order.cnumber%> </h4>
+    <h4>Quantity: <%=request.order.quantity%> </h4>
+    
+    
+    
+  </div>
+      
+
   </body>
   <script src="/lib/jquery/dist/jquery.min.js"></script>
   <script src="/vendor/ejs_production.js"></script>

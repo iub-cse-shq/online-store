@@ -1,7 +1,7 @@
 <!DOCTYPE html5>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>Edit Product</title>
+    <title>New Product</title>
     <!-- General META -->
     <meta charset="utf-8">
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
@@ -9,48 +9,132 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <style>
+      h2{
+        position:fixed;
+        background-color:white;
+       
+        z-index: 10000000000;
+        top:-10px;
+        left: 0px;
+        
+      }
+      
+      #ta{
+  
+  top:150px;
+  left:900px;
+  border: 1px solid #ccc;
+}
+table, td, th {    
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table {
+  position:absolute;
+    top:358px;
+    left:908px;
+    border:1px solid #ccc;
+    width: 299px;
+}
+
+th, td {
+    padding: 15px;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+      
+      #submit,#sub {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+    </style>
   </head>
   <body>
-    <h2>Edit Product</h2>
-    <div class="form-horizontal">
-  <div class="form-group">
-    <label for="name" class="col-sm-2 control-label">Name</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="name" placeholder="John Doe" value=<%=request.product.name%>>
-    </div>
+    
+  <div class="contain">
+  <div class="header" id="nw">
+    
+    <a class="id2"href="https://online-store-mustafizz.c9users.io/products/all">All Product</a>
+    <a class="id2"href="https://online-store-mustafizz.c9users.io/products/new">New Product Entry</a>
+    <a class="id2"href="htc.html">Order</a>
   </div>
-  <div class="form-group">
-    <label for="description" class="col-sm-2 control-label">Description</label>
-    <div class="col-sm-10">
-      <textarea class="form-control" rows="3" id="description"><%=request.product.description%>
-      </textarea>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="price" class="col-sm-2 control-label">Price</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="price" value=<%=request.product.price%>>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="quantity" class="col-sm-2 control-label">Quantity</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="quantity" value=<%=request.product.quantity%>>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button id="submit" type="submit" class="btn btn-default">Submit</button>
-    </div>
-  </div>
-
 </div>
+    
+    <h2>Create New Product</h2>
+    
+    <div >
+<table>  
+    
+    <img src=<%=request.product.photo%> id="ta" width="298" height="200"  >
+ 
+    <tr>
+    <th>Product name:</th>
+    <th><%=request.product.name%></th>
+    </tr>
+    <tr>
+    <td>Description:</td>
+    <td><%=request.product.description%></td>
+    </tr>
+    <tr>
+      <td>Price: </td>
+      <td><%=request.product.price%> BDT</td>
+    </tr>
+    <tr>
+      <td>Quantity:</td>
+    <td><%=request.product.quantity%> BDT</td>
+    </tr>
+  </table> 
+
+ </div>  
+    
+    <div class="form-horizontal" id="new">
+      
+  
+    <label for="name" class="col-sm-2 control-label">Name</label>
+    
+      <input type="text" class="form-control" id="name" placeholder="John Doe" value=<%=request.product.name%>>
+   
+  
+    
+    <label for="brand" class="col-sm-2 control-label">brand</label>
+    <input type="text" class="form-control" id="brand" placeholder="John Doe" value= <%=request.product.brand%>>
+    <label for="photo" class="col-sm-2 control-label">photo</label>
+    <input type="text" class="form-control" id="photo" placeholder="your photo link" value=<%=request.product.photo%>>
+    
+  
+  
+    <label for="description" class="col-sm-2 control-label">Description</label>
+    <input type="text"class="form-control" rows="3" id="description" value=<%=request.product.description%>>
+  
+    <label for="price" class="col-sm-2 control-label">Price</label>
+    <input type="number" class="form-control" id="price" value=<%=request.product.price%>>
+
+    <label for="quantity" class="col-sm-2 control-label">Quantity</label>
+    <input type="number" class="form-control" id="quantity" value=<%=request.product.quantity%>>
+    <button id="submit" type="submit" class="btn btn-default">Submit</button>
+    <button id="sub" type="submit" class="btn btn-default">Delete</button>
+      <div id="error"></div>
+    </div>
+
   </body>
   <script src="/lib/jquery/dist/jquery.min.js"></script>
   <script src="/vendor/ejs_production.js"></script>
   <script>
-  var productID = <%- JSON.stringify(request.product._id) %>;
+   var productID = <%- JSON.stringify(request.product._id) %>;
   var product = {};
   $('#name').change(function(){
     product.name = $('#name').val();
@@ -71,7 +155,20 @@
       data: product
     }).done(function(response){
       console.log(response);
-      window.location.replace("/products/"+response._id);
+      window.location.replace("/products/add/"+response._id);
+    }).fail(function(response){
+      $("#error").text(JSON.parse(response.responseText).message);
+        console.log(JSON.parse(response.responseText).message);
+    });
+  });
+  $('#sub').click(function(){
+    $.ajax({
+      method:"DELETE",
+      url:'/api/products/'+productID,
+      data: product
+    }).done(function(response){
+      console.log(response);
+      window.location.replace("/products/all");
     }).fail(function(response){
       $("#error").text(JSON.parse(response.responseText).message);
         console.log(JSON.parse(response.responseText).message);
