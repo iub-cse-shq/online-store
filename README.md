@@ -11,16 +11,4 @@
     `node server.js`
 4. In the browser open http://localhost:3000/, and you should see the index page
 
-**Exposed APIs**:
 
-GET **/api/articles** (returns list of articles)
-
-POST **/api/articles** (create new article)
-
-GET **/api/articles/:articleId** (returns an article with matching id)
-
-DELETE **/api/articles/:articleId** (deletes the matching article)
-
-GET **/api/articles/edit/:articleId** (returns an article with matching id)
-
-PUT **/api/articles/edit/:articleId** (updates the matching article)
